@@ -214,7 +214,15 @@ def intro():
     
     st.session_state.page = 1
     st.button("Start")
-        
+    st.markdown(
+        """
+        ---
+        ⚠️ **Important Notice: Handling Streamlit Cloud Limits**
+        If the app is not working or crashing due to Streamlit Cloud's limitations, we suggest using the text-story-input branch. This will allow you to input the story in text format, which will not crash or throw memory errors due to the cloud's constraints.
+
+        **The new link for text input**: [Text input App link](https://thinkingpsychologist-dpfclbx99uuzamqfmejxhz.streamlit.app/)
+        """
+    )        
 
 # Recording Page
 def recording_page():
