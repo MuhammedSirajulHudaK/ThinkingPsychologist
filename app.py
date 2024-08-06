@@ -194,6 +194,7 @@ def intro():
     display_logo()
     st.title("Welcome to ThinkingPsychologist")
     st.subheader("Take your psychology assessment")
+    st.video("https://youtu.be/uBK8kgdXAnE", start_time=0)
     st.markdown(
         """
         This app helps to understand the psychology of individuals by asking them
