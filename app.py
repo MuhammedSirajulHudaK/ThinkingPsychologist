@@ -253,7 +253,25 @@ def recording_page():
                 st.session_state.recordings[current_image_index] = wav_audio_data
                 st.session_state.page += 1
                 st.success("Recording saved successfully. Press '**Start Recording**' for the next task.")
-    
+
+    st.markdown(
+        """
+        ---   
+   """)
+    st.markdown("📜 Instructions for Recording Your Story")
+
+    st.markdown("### 1️⃣ Click 'Start Recording'")
+    st.write("Press the 'Start Recording' button to begin recording your story.")
+
+    st.markdown("### 2️⃣ Click 'Stop'")
+    st.write("Once you’ve finished recording, click the 'Stop' button to end the recording.")
+
+    st.markdown("### 3️⃣ Click 'Submit'")
+    st.write("Press the 'Submit' button to send your recording. Wait for the confirmation message that the submission was successful.")
+
+    st.markdown("### 4️⃣ Click 'Start Recording' for the Next Image")
+    st.write("Use the 'Start Recording' button again to record the story for the next image.")
+
 
 
 
