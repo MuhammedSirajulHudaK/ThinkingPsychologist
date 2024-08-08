@@ -258,7 +258,7 @@ def recording_page():
         """
         ---   
    """)
-    st.markdown("📜 Instructions for Recording Your Story")
+    st.markdown("# 📜 Instructions for Recording Your Story")
 
     st.markdown("### 1️⃣ Click 'Start Recording'")
     st.write("Press the 'Start Recording' button to begin recording your story.")
