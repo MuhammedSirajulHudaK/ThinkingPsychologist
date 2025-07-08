@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeQuest - Competitive Programming Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i>
+                <span>CodeQuest</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" onclick="showSection('home')" class="nav-link active">Home</a></li>
+                <li><a href="#" onclick="showSection('problems')" class="nav-link">Problems</a></li>
+                <li><a href="#" onclick="showSection('contests')" class="nav-link">Contests</a></li>
+                <li><a href="#" onclick="showSection('leaderboard')" class="nav-link">Leaderboard</a></li>
+                <li><a href="#" onclick="showSection('submissions')" class="nav-link">My Submissions</a></li>
+            </ul>
+            <div class="nav-auth">
+                <button id="loginBtn" onclick="showLoginModal()" class="btn btn-outline">Login</button>
+                <button id="signupBtn" onclick="showSignupModal()" class="btn btn-primary">Sign Up</button>
+                <div id="userMenu" class="user-menu" style="display: none;">
+                    <span id="username" class="username"></span>
+                    <button onclick="logout()" class="btn btn-outline">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Master Competitive Programming</h1>
+                    <p>Practice coding problems, participate in contests, and improve your algorithmic thinking with CodeQuest.</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <h3>1000+</h3>
+                            <p>Problems</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Contests</p>
+                        </div>
+                        <div class="stat">
+                            <h3>10k+</h3>
+                            <p>Users</p>
+                        </div>
+                    </div>
+                    <button onclick="showSection('problems')" class="btn btn-primary btn-large">Start Coding</button>
+                </div>
+                <div class="hero-image">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problems Section -->
+        <section id="problems" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Practice Problems</h2>
+                    <div class="filters">
+                        <select id="difficultyFilter" onchange="filterProblems()">
+                            <option value="">All Difficulties</option>
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
+                        </select>
+                        <input type="text" id="searchProblems" placeholder="Search problems..." oninput="filterProblems()">
+                    </div>
+                </div>
+                <div id="problemsList" class="problems-grid">
+                    <!-- Problems will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Detail Modal -->
+        <div id="problemModal" class="modal">
+            <div class="modal-content problem-modal">
+                <span class="close" onclick="closeProblemModal()">&times;</span>
+                <div class="problem-layout">
+                    <div class="problem-description">
+                        <div id="problemContent">
+                            <!-- Problem content will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="code-editor">
+                        <div class="editor-header">
+                            <select id="languageSelect">
+                                <option value="python">Python</option>
+                                <option value="java">Java</option>
+                                <option value="cpp">C++</option>
+                                <option value="javascript">JavaScript</option>
+                            </select>
+                            <button id="submitCode" onclick="submitSolution()" class="btn btn-primary">Submit</button>
+                        </div>
+                        <div id="codeEditor" class="code-textarea">
+                            <textarea id="codeTextarea" placeholder="Write your code here..."></textarea>
+                        </div>
+                        <div id="submissionResult" class="submission-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contests Section -->
+        <section id="contests" class="section">
+            <div class="container">
+                <h2>Contests</h2>
+                <div id="contestsList" class="contests-grid">
+                    <!-- Contests will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaderboard Section -->
+        <section id="leaderboard" class="section">
+            <div class="container">
+                <h2>Global Leaderboard</h2>
+                <div class="leaderboard-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Username</th>
+                                <th>Problems Solved</th>
+                                <th>Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboardBody">
+                            <!-- Leaderboard data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Submissions Section -->
+        <section id="submissions" class="section">
+            <div class="container">
+                <h2>My Submissions</h2>
+                <div id="submissionsList" class="submissions-list">
+                    <!-- User submissions will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm" onsubmit="login(event)">
+                <div class="form-group">
+                    <label for="loginUsername">Username</label>
+                    <input type="text" id="loginUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignupModal()">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signupForm" onsubmit="signup(event)">
+                <div class="form-group">
+                    <label for="signupUsername">Username</label>
+                    <input type="text" id="signupUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,88 +1,193 @@
-🧠 **ThinkingPsychologist**
+# CodeQuest - Competitive Programming Platform
 
-Welcome to **ThinkingPsychologist**! This innovative application, powered by Falcon LLM, serves as a virtual psychologist, offering users a unique opportunity to explore their psychology through storytelling.
+A modern, full-featured competitive programming platform similar to HackerEarth, built with Node.js and Express for the backend and vanilla JavaScript for the frontend.
 
-By analyzing narratives created in response to a series of images, ThinkingPsychologist provides insights into personality traits, emotional states, and other psychological aspects.
+## 🚀 Features
 
-## 🌐 Access the Deployed App
+### 🎯 Core Features
+- **Problem Solving**: Browse and solve coding problems with varying difficulty levels
+- **Online IDE**: Built-in code editor with syntax highlighting for multiple languages
+- **Real-time Submission**: Submit solutions and get instant feedback
+- **User Authentication**: Secure login/signup system with JWT tokens
+- **Contest System**: Participate in coding contests with live leaderboards
+- **Global Leaderboard**: Track your ranking against other users
+- **Personal Dashboard**: View your submission history and progress
 
-You can access the deployed app at the following link (See the new link below if it throws the resource limit):
+### 💻 Programming Languages Supported
+- Python
+- Java
+- C++
+- JavaScript
 
-[ThinkingPsychologist App](https://thinkingpsychologist-nilpdnxfxszangjhhhrfqs.streamlit.app/)
+### � Problem Categories
+- Easy, Medium, Hard difficulty levels
+- Various topics: Arrays, Dynamic Programming, Trees, Math, Strings, etc.
+- Sample problems include Two Sum, Palindrome Number, Longest Common Subsequence, and more
 
-## ⚠️ Important Notice: Handling Streamlit Cloud Limits
+## 🛠️ Technology Stack
 
-If the app is not working or crashing due to Streamlit Cloud's limitations, we suggest using the `text-story-input` branch. This will allow you to input the story in text format, which will not crash or throw memory errors due to the cloud's constraints.
+**Backend:**
+- Node.js with Express.js
+- JWT for authentication
+- bcryptjs for password hashing
+- JSON file-based data storage (easily replaceable with a database)
 
-The new link for text input : [Text input App link](https://thinkingpsychologist-dpfclbx99uuzamqfmejxhz.streamlit.app/)
+**Frontend:**
+- Vanilla HTML5, CSS3, JavaScript
+- Font Awesome icons
+- Google Fonts (Inter)
+- Responsive design with CSS Grid and Flexbox
 
+## 📋 Prerequisites
 
-## 🚀 **Features**
+- Node.js (v14 or higher)
+- npm (Node Package Manager)
 
-### 🖼️ Image-Based Storytelling
-Users are presented with a series of images and are invited to record a story based on each image. This approach helps reveal underlying thoughts, feelings, and perceptions.
+## 🚀 Quick Start
 
-### 🎙️ Audio Recording & Transcription
-The app captures the user’s voice as they narrate their story. These recordings are then transcribed using an open-source model.
+1. **Clone/Download the project** (if you don't already have it)
 
-### 🤖 AI-Driven Analysis
-Utilizing the powerful Falcon LLM, the application generates a detailed psychology assessment report. This includes evaluations of personality traits, emotional states, key observations, and personalized recommendations.
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-### 📄 PDF Report Generation
-Users receive a personalized PDF report summarizing their psychological analysis, featuring actionable insights and recommendations.
+3. **Start the server:**
+   ```bash
+   npm start
+   ```
 
-## 📋 **How It Works**
+4. **Access the platform:**
+   Open your browser and navigate to: `http://localhost:3000`
 
-### 1. Introduction
-Users begin by reading the introductory page, which provides an overview of the process and instructions.
+## 📁 Project Structure
 
-### 2. Storytelling Phase
-Users view a series of images, one at a time, and record a story for each image.
+```
+codequest-platform/
+├── public/                 # Frontend files
+│   ├── index.html         # Main HTML file
+│   ├── styles.css         # CSS styling
+│   └── script.js          # JavaScript functionality
+├── data/                  # JSON data files (auto-generated)
+│   ├── users.json         # User accounts
+│   ├── problems.json      # Problem definitions
+│   ├── submissions.json   # User submissions
+│   └── contests.json      # Contest information
+├── server.js              # Main server file
+├── package.json           # Node.js dependencies
+└── README.md             # This file
+```
 
-### 3. Analysis Phase
-The app transcribes the audio recordings and uses Falcon LLM to analyze the stories, generating a comprehensive psychology assessment.
+## 🎮 How to Use
 
-### 4. Report Generation
-A detailed PDF report is created and made available for download, including an overall assessment, detailed personality traits, and recommendations for personal growth.
+### For Users:
 
-## 🛠️ **Installation**
+1. **Registration/Login:**
+   - Click "Sign Up" to create a new account
+   - Or "Login" if you already have an account
+   - Use any username/email/password combination
 
-1. **Clone the repository:**
+2. **Solving Problems:**
+   - Navigate to "Problems" section
+   - Filter by difficulty or search for specific topics
+   - Click on any problem to open it in the IDE
+   - Write your solution in the code editor
+   - Select your preferred programming language
+   - Click "Submit" to test your solution
 
-    ```bash
-    git clone https://github.com/MuhammedSirajulHudaK/ThinkingPsychologist.git
-    ```
+3. **Viewing Results:**
+   - Get instant feedback on your submission
+   - Check "My Submissions" to see your history
+   - Track your progress on the leaderboard
 
-2. **Navigate into the project directory:**
+4. **Contests:**
+   - View upcoming and live contests
+   - Participate when contests are active
+   - Compete with other users
 
-    ```bash
-    cd ThinkingPsychologist
-    ```
+### Sample User Credentials:
+Since this is a demo, you can create any account you want. Here's an example:
+- Username: `coder123`
+- Email: `coder@example.com`
+- Password: `password123`
 
-3. **Install the required packages:**
+## 🔧 API Endpoints
 
-    ```bash
-    pip install -r requirements.txt
-    sudo apt-get update
-    sudo apt-get install ffmpeg
-    ```
+### Authentication
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
 
-## 🚀 **Running the App**
+### Problems
+- `GET /api/problems` - Get all problems
+- `GET /api/problems/:id` - Get specific problem
+- `POST /api/submit` - Submit solution (requires auth)
 
-To run the Streamlit app, use the following command:
+### Data
+- `GET /api/contests` - Get all contests
+- `GET /api/leaderboard` - Get global leaderboard
+- `GET /api/my-submissions` - Get user submissions (requires auth)
 
-```bash
-streamlit run app.py
- ```
-## Home Page
+## 🎨 UI/UX Features
 
-![First Image](assets/firstscreen.png)
+- **Modern Design**: Clean, professional interface with smooth animations
+- **Responsive Layout**: Works perfectly on desktop, tablet, and mobile devices
+- **Dark/Light Theme**: Modern color scheme with good contrast
+- **Interactive Elements**: Hover effects, smooth transitions, and intuitive navigation
+- **Real-time Feedback**: Instant notifications for user actions
 
-## Storytelling Page
+## 🔍 Problem Examples
 
-![Storytelling](assets/secondscreen.png)
+The platform comes with 4 sample problems:
 
-## Report Download Page
+1. **Two Sum** (Easy) - Array manipulation
+2. **Palindrome Number** (Easy) - Mathematical problem
+3. **Longest Common Subsequence** (Medium) - Dynamic programming
+4. **Binary Tree Maximum Path Sum** (Hard) - Tree algorithms
 
-![Download Report](assets/lastscreen.png)
+## 🎯 Future Enhancements
+
+Potential features that could be added:
+- Database integration (MongoDB, PostgreSQL)
+- Advanced code editor (Monaco Editor integration)
+- Real code execution and testing
+- Discussion forums
+- Company hiring challenges
+- More programming languages
+- Code plagiarism detection
+- Advanced analytics and insights
+
+## � Troubleshooting
+
+**Server won't start:**
+- Make sure Node.js is installed: `node --version`
+- Install dependencies: `npm install`
+- Check if port 3000 is available
+
+**Can't submit solutions:**
+- Ensure you're logged in
+- Check browser console for errors
+- Verify server is running
+
+**Data not loading:**
+- Check server console for errors
+- Ensure `data/` directory exists
+- Restart the server
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 🤝 Contributing
+
+Feel free to fork this project and submit pull requests for improvements!
+
+## 📞 Support
+
+For issues or questions, please check the troubleshooting section or create an issue in the project repository.
+
+---
+
+**Happy Coding! 🎉**
+
+Start your competitive programming journey with CodeQuest!
 
