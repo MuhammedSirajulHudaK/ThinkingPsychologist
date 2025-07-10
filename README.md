@@ -1,88 +1,224 @@
-🧠 **ThinkingPsychologist**
+# TechCode - Live Coding Interview Platform
 
-Welcome to **ThinkingPsychologist**! This innovative application, powered by Falcon LLM, serves as a virtual psychologist, offering users a unique opportunity to explore their psychology through storytelling.
+A modern, professional website inspired by HackerRank's mock interviews page, built with HTML, CSS, and JavaScript.
 
-By analyzing narratives created in response to a series of images, ThinkingPsychologist provides insights into personality traits, emotional states, and other psychological aspects.
+## 🚀 Features
 
-## 🌐 Access the Deployed App
+### Core Functionality
+- **Live Coding Interviews** - Interactive code editor mockup with syntax highlighting
+- **AI-Powered Assistant** - Built-in AI chat simulation for candidate support
+- **Security Monitoring** - Tab switching detection and candidate verification mockups
+- **Real-World Challenges** - Code repository interface with Git-style diffs
+- **Form Handling** - Complete demo request form with validation
+- **Responsive Design** - Mobile-first approach with elegant breakpoints
 
-You can access the deployed app at the following link (See the new link below if it throws the resource limit):
+### Technical Features
+- **Modern CSS Grid & Flexbox** - Professional layout system
+- **Smooth Animations** - Intersection Observer API for scroll-triggered animations
+- **Interactive Elements** - Button ripple effects, typing animations
+- **Form Validation** - Real-time input validation with error messages
+- **Mobile Navigation** - Collapsible hamburger menu for mobile devices
+- **Performance Monitoring** - Built-in page load time tracking
 
-[ThinkingPsychologist App](https://thinkingpsychologist-nilpdnxfxszangjhhhrfqs.streamlit.app/)
+### Design Elements
+- **Professional Typography** - Inter font family for modern readability
+- **Consistent Color Scheme** - Green primary color inspired by HackerRank
+- **Card-based Layout** - Clean, organized content presentation
+- **Micro-interactions** - Hover effects, transitions, and visual feedback
+- **Code Editor Mockup** - Realistic IDE interface with syntax highlighting
+- **Particle Effects** - Subtle background animations in hero section
 
-## ⚠️ Important Notice: Handling Streamlit Cloud Limits
+## 🛠️ Technologies Used
 
-If the app is not working or crashing due to Streamlit Cloud's limitations, we suggest using the `text-story-input` branch. This will allow you to input the story in text format, which will not crash or throw memory errors due to the cloud's constraints.
+- **HTML5** - Semantic markup and modern structure
+- **CSS3** - Custom properties, Grid, Flexbox, animations
+- **Vanilla JavaScript** - No frameworks, pure JS functionality
+- **Font Awesome** - Professional icon library
+- **Google Fonts** - Inter typography
 
-The new link for text input : [Text input App link](https://thinkingpsychologist-dpfclbx99uuzamqfmejxhz.streamlit.app/)
+## 📁 Project Structure
 
+```
+.
+├── index.html          # Main HTML file
+├── styles.css          # Complete CSS styling
+├── script.js           # JavaScript functionality
+└── README.md           # Project documentation
+```
 
-## 🚀 **Features**
+## 🎯 Sections Overview
 
-### 🖼️ Image-Based Storytelling
-Users are presented with a series of images and are invited to record a story based on each image. This approach helps reveal underlying thoughts, feelings, and perceptions.
+### 1. Navigation Bar
+- Fixed header with smooth scrolling
+- Mobile-responsive hamburger menu
+- Logo and call-to-action buttons
 
-### 🎙️ Audio Recording & Transcription
-The app captures the user’s voice as they narrate their story. These recordings are then transcribed using an open-source model.
+### 2. Hero Section
+- Compelling headline with highlighted text
+- Code editor mockup with syntax highlighting
+- Primary and secondary action buttons
+- Particle effect background
 
-### 🤖 AI-Driven Analysis
-Utilizing the powerful Falcon LLM, the application generates a detailed psychology assessment report. This includes evaluations of personality traits, emotional states, key observations, and personalized recommendations.
+### 3. Features Section
+- Three-column grid layout
+- Icon-based feature cards
+- Hover animations and effects
 
-### 📄 PDF Report Generation
-Users receive a personalized PDF report summarizing their psychological analysis, featuring actionable insights and recommendations.
+### 4. Security Section
+- Two-column layout with text and visual
+- Security monitoring mockup
+- Animated alerts and status indicators
 
-## 📋 **How It Works**
+### 5. Real-World Section
+- Git repository interface mockup
+- File tree and diff view
+- Code collaboration demonstration
 
-### 1. Introduction
-Users begin by reading the introductory page, which provides an overview of the process and instructions.
+### 6. AI Assistant Section
+- Chat interface simulation
+- Typing indicator animations
+- Conversational AI demonstration
 
-### 2. Storytelling Phase
-Users view a series of images, one at a time, and record a story for each image.
+### 7. Testimonial Section
+- Customer quote with attribution
+- Centered layout with emphasis
 
-### 3. Analysis Phase
-The app transcribes the audio recordings and uses Falcon LLM to analyze the stories, generating a comprehensive psychology assessment.
+### 8. Resources Section
+- Three-column resource cards
+- Icon-based content presentation
 
-### 4. Report Generation
-A detailed PDF report is created and made available for download, including an overall assessment, detailed personality traits, and recommendations for personal growth.
+### 9. Contact Form Section
+- Comprehensive demo request form
+- Real-time validation
+- Two-column responsive layout
 
-## 🛠️ **Installation**
+### 10. Footer
+- Five-column link organization
+- Company branding and legal links
 
-1. **Clone the repository:**
+## � Getting Started
 
-    ```bash
-    git clone https://github.com/MuhammedSirajulHudaK/ThinkingPsychologist.git
-    ```
+### Prerequisites
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+- Python 3 (for local server) or any other web server
 
-2. **Navigate into the project directory:**
+### Installation & Setup
 
-    ```bash
-    cd ThinkingPsychologist
-    ```
+1. **Clone or Download the Project**
+   ```bash
+   git clone <repository-url>
+   cd techcode-website
+   ```
 
-3. **Install the required packages:**
+2. **Start Local Server**
+   ```bash
+   # Using Python
+   python3 -m http.server 8000
+   
+   # Or using Node.js
+   npx http-server
+   
+   # Or using PHP
+   php -S localhost:8000
+   ```
 
-    ```bash
-    pip install -r requirements.txt
-    sudo apt-get update
-    sudo apt-get install ffmpeg
-    ```
+3. **Open in Browser**
+   - Navigate to `http://localhost:8000`
+   - The website should load with all features active
 
-## 🚀 **Running the App**
+### Alternative Setup
+Simply open `index.html` directly in your browser, though some features may be limited without a server.
 
-To run the Streamlit app, use the following command:
+## 🎨 Customization
 
-```bash
-streamlit run app.py
- ```
-## Home Page
+### Colors
+Update CSS custom properties in `styles.css`:
+```css
+:root {
+    --primary-color: #00a86b;    /* Main brand color */
+    --secondary-color: #4a90e2;  /* Accent color */
+    --text-primary: #1a1a1a;     /* Main text */
+    --text-secondary: #6b7280;   /* Secondary text */
+}
+```
 
-![First Image](assets/firstscreen.png)
+### Content
+- Update text content in `index.html`
+- Replace company name "TechCode" with your brand
+- Modify form fields and validation rules
+- Update testimonials and resource links
 
-## Storytelling Page
+### Styling
+- Modify component styles in `styles.css`
+- Adjust responsive breakpoints
+- Update animation timings and effects
 
-![Storytelling](assets/secondscreen.png)
+## 📱 Responsive Design
 
-## Report Download Page
+The website is fully responsive with breakpoints at:
+- **Desktop**: 1200px+ (full layout)
+- **Tablet**: 768px-1199px (adapted layout)
+- **Mobile**: 320px-767px (stacked layout)
 
-![Download Report](assets/lastscreen.png)
+Key responsive features:
+- Collapsible navigation menu
+- Stacked content sections
+- Adjusted typography scales
+- Touch-friendly button sizes
+
+## ⚡ Performance Features
+
+- **Optimized Assets**: Minimal external dependencies
+- **Lazy Loading**: Intersection Observer for animations
+- **Efficient CSS**: Modern properties and methodologies
+- **Compressed Code**: Clean, organized structure
+- **Performance Monitoring**: Built-in load time tracking
+
+## 🔧 Browser Support
+
+- Chrome 80+
+- Firefox 75+
+- Safari 13+
+- Edge 80+
+
+Modern features used:
+- CSS Grid and Flexbox
+- CSS Custom Properties
+- Intersection Observer API
+- ES6+ JavaScript features
+
+## 📊 Accessibility
+
+- Semantic HTML structure
+- ARIA labels where appropriate
+- Keyboard navigation support
+- Focus management
+- Color contrast compliance
+- Screen reader friendly
+
+## 🤝 Contributing
+
+1. Fork the project
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🔗 Live Demo
+
+The website is currently running at: `http://localhost:8000`
+
+## 📞 Support
+
+For questions or support, please contact:
+- Email: support@techcode.com
+- Website: https://techcode.com
+
+---
+
+**Built with ❤️ by the TechCode Team**
 
