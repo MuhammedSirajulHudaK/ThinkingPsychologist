@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCode Interviews - Live Coding Interview Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i>
+                <span>TechCode</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#features" class="nav-link">Products</a>
+                <a href="#solutions" class="nav-link">Solutions</a>
+                <a href="#resources" class="nav-link">Resources</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <div class="nav-actions">
+                    <button class="btn-secondary">Log In</button>
+                    <button class="btn-primary">Request Demo</button>
+                </div>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Code, create, and innovate with 
+                    <span class="highlight">live coding interviews</span>
+                </h1>
+                <p class="hero-description">
+                    Get an accurate sense for what it would be like to work together by pair programming with candidates.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn-primary large">Try for Free</button>
+                    <button class="btn-secondary large">Book a Demo</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="code-editor-mockup">
+                    <div class="editor-header">
+                        <div class="editor-tabs">
+                            <div class="tab active">interview.js</div>
+                            <div class="tab">solution.py</div>
+                        </div>
+                        <div class="editor-actions">
+                            <button class="run-btn">Run Code</button>
+                        </div>
+                    </div>
+                    <div class="editor-content">
+                        <div class="line-numbers">
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                            <span>5</span>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-line"><span class="keyword">function</span> <span class="function">findPairs</span>(<span class="parameter">arr, target</span>) {</div>
+                            <div class="code-line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i < arr.length; i++) {</div>
+                            <div class="code-line">    <span class="comment">// Live collaboration in progress...</span></div>
+                            <div class="code-line">  }</div>
+                            <div class="code-line">}</div>
+                        </div>
+                    </div>
+                    <div class="ai-assistant">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Assistant is ready to help</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Interviews that mirror the daily work of a developer</h2>
+                <p>It's important that your interview environment is measuring the next generation of skills while maintaining trust in the results. Review code, fix bugs, build a feature, and see the result, all within an environment built for technical hiring.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Hard skills, meet soft skills</h3>
+                    <p>Add empirical evidence to your toughest hiring decisions. Problem-solve live in a collaborative IDE to get a feeling for what it would be like to work together</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Use with ease and speed</h3>
+                    <p>Cut down on clunky setups and awkward downtime so that you and your candidate can jump right in and spend more time coding.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-repeat"></i>
+                    </div>
+                    <h3>Rinse and repeat</h3>
+                    <p>Build a standardized process with ready-made templates and scorecards to deliver the best candidate experience, every time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="security-section">
+        <div class="container">
+            <div class="security-content">
+                <div class="security-text">
+                    <h2>The hidden cost of screen sharing</h2>
+                    <p>AI has made it easy to game the interview when you rely on screen sharing. Choose a tool built for technical hiring, so that you can easily detect candidate misbehavior.</p>
+                    <ul class="security-features">
+                        <li><i class="fas fa-shield-alt"></i>Flag when a candidate switches tabs</li>
+                        <li><i class="fas fa-desktop"></i>Detect the use of multiple monitors</li>
+                        <li><i class="fas fa-user-check"></i>Catch if a different person shows up to your interview</li>
+                        <li><i class="fas fa-ban"></i>Identify help from third-party tools (Yes, even the ones who claim to be invisible)</li>
+                    </ul>
+                </div>
+                <div class="security-visual">
+                    <div class="security-monitor">
+                        <div class="monitor-screen">
+                            <div class="security-alert">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>Tab switching detected</span>
+                            </div>
+                            <div class="candidate-view">
+                                <div class="face-detection">
+                                    <div class="face-box"></div>
+                                    <span class="status verified">Candidate verified</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real World Section -->
+    <section class="real-world-section">
+        <div class="container">
+            <div class="real-world-content">
+                <div class="real-world-visual">
+                    <div class="repository-mockup">
+                        <div class="repo-header">
+                            <i class="fab fa-github"></i>
+                            <span>interview-challenge</span>
+                        </div>
+                        <div class="file-tree">
+                            <div class="file"><i class="fas fa-file-code"></i>app.js</div>
+                            <div class="file"><i class="fas fa-file-code"></i>utils.js</div>
+                            <div class="file"><i class="fas fa-file-code"></i>test.js</div>
+                        </div>
+                        <div class="diff-view">
+                            <div class="diff-line added">+ function optimizeQuery() {</div>
+                            <div class="diff-line removed">- function slowQuery() {</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="real-world-text">
+                    <h2>Interview in real code repositories</h2>
+                    <p>Code repository questions give candidates the chance to solve realistic engineering challenges. These assessments replicate working environments, showing how candidates debug, problem-solve, and integrate changes into live codebases.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Section -->
+    <section class="ai-section">
+        <div class="container">
+            <div class="ai-content">
+                <div class="ai-text">
+                    <h2>Built-in AI assistants</h2>
+                    <p>Code repositories come with a built-in AI assistant, just like today's developers use in their daily workflows. This allows hiring managers to evaluate how candidates interact with AI tools, offering a clear picture of their ability to integrate these technologies productively.</p>
+                </div>
+                <div class="ai-visual">
+                    <div class="ai-chat">
+                        <div class="chat-message ai">
+                            <div class="avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message">I can help you optimize this algorithm. Have you considered using a hash map for O(1) lookups?</div>
+                        </div>
+                        <div class="chat-message user">
+                            <div class="avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="message">That's a great suggestion! Let me implement that approach.</div>
+                        </div>
+                        <div class="typing-indicator">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial">
+                <div class="quote-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <blockquote>
+                    "TechCode is a great tool for interviewing folks consistently, evaluating code live, and collaborating effectively with candidates during the process."
+                </blockquote>
+                <div class="testimonial-author">
+                    <strong>Scott Leach</strong>
+                    <span>Manager of Technical Recruiting, SoFi</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources-section" id="resources">
+        <div class="container">
+            <h2>Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>2025 Developer Skills Report</h3>
+                    <p>Key trends and forecasts for technical hiring</p>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-image">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Research: Testing "invisible" interview tools</h3>
+                    <p>How we detect advanced cheating methods</p>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-image">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>The Hiring Crisis in an AI-driven world</h3>
+                    <p>Adapting recruitment for the AI era</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>See TechCode In action</h2>
+                    <p>We've helped companies hire millions of developers, and along the way we've learned that hiring processes are more effective when they're tailored for the nuances of each role.</p>
+                </div>
+                <div class="cta-form">
+                    <form class="demo-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Business Email*</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="firstName">First Name*</label>
+                                <input type="text" id="firstName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="lastName">Last Name*</label>
+                                <input type="text" id="lastName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company Name*</label>
+                                <input type="text" id="company" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="jobTitle">Job Title*</label>
+                                <input type="text" id="jobTitle" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="companySize">Company Size*</label>
+                                <select id="companySize" required>
+                                    <option value="">Please select...</option>
+                                    <option value="1-100">1-100</option>
+                                    <option value="101-500">101-500</option>
+                                    <option value="501-1000">501-1000</option>
+                                    <option value="1001-5000">1001-5000</option>
+                                    <option value="5000+">5000+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">Which TechCode products are you interested in?*</label>
+                            <select id="interest" required>
+                                <option value="">Please select...</option>
+                                <option value="hiring">Hiring solutions for my organization</option>
+                                <option value="upskilling">Upskilling solutions for my organization</option>
+                                <option value="learning">Learning solutions for myself</option>
+                            </select>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="marketing">
+                                <span class="checkmark"></span>
+                                I consent to receive marketing emails from TechCode regarding its products, services, news, and events.
+                            </label>
+                        </div>
+                        <button type="submit" class="btn-primary full-width">Schedule a Demo</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#">Screen</a></li>
+                        <li><a href="#">Interview</a></li>
+                        <li><a href="#">Engage</a></li>
+                        <li><a href="#">SkillUp</a></li>
+                        <li><a href="#">Certified Assessments</a></li>
+                        <li><a href="#">Plagiarism Detection</a></li>
+                        <li><a href="#">Real-world Questions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="#">Set up your skills strategy</a></li>
+                        <li><a href="#">Showcase your tech brand</a></li>
+                        <li><a href="#">Optimize your hiring process</a></li>
+                        <li><a href="#">Mobilize your internal talent</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Customer stories</a></li>
+                        <li><a href="#">Roles directory</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Integrations</a></li>
+                        <li><a href="#">What's new</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About us</h4>
+                    <ul>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Status</a></li>
+                        <li><a href="#">Trust</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Get started</h4>
+                    <ul>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Free Trial</a></li>
+                        <li><a href="#">Request a demo</a></li>
+                        <li><a href="#">Product support</a></li>
+                        <li><a href="#">For developers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <i class="fas fa-code"></i>
+                    <span>TechCode</span>
+                </div>
+                <div class="footer-legal">
+                    <span>© TechCode 2025 All Rights Reserved.</span>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
