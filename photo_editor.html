@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Editor Pro</title>
+    <link rel="stylesheet" href="photo_editor.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-camera"></i>
+                <h1>Photo Editor Pro</h1>
+            </div>
+            <div class="header-actions">
+                <button id="save-btn" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Save
+                </button>
+                <button id="export-btn" class="btn btn-secondary">
+                    <i class="fas fa-download"></i> Export
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- File Upload -->
+                <div class="tool-section">
+                    <h3><i class="fas fa-upload"></i> Upload Image</h3>
+                    <div class="upload-area" id="upload-area">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag & drop or click to upload</p>
+                        <input type="file" id="file-input" accept="image/*" hidden>
+                    </div>
+                </div>
+
+                <!-- Basic Adjustments -->
+                <div class="tool-section">
+                    <h3><i class="fas fa-sliders-h"></i> Adjustments</h3>
+                    <div class="control-group">
+                        <label>Brightness</label>
+                        <input type="range" id="brightness" min="-100" max="100" value="0" class="slider">
+                        <span class="value">0</span>
+                    </div>
+                    <div class="control-group">
+                        <label>Contrast</label>
+                        <input type="range" id="contrast" min="-100" max="100" value="0" class="slider">
+                        <span class="value">0</span>
+                    </div>
+                    <div class="control-group">
+                        <label>Saturation</label>
+                        <input type="range" id="saturation" min="-100" max="100" value="0" class="slider">
+                        <span class="value">0</span>
+                    </div>
+                    <div class="control-group">
+                        <label>Hue</label>
+                        <input type="range" id="hue" min="0" max="360" value="0" class="slider">
+                        <span class="value">0</span>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="tool-section">
+                    <h3><i class="fas fa-magic"></i> Filters</h3>
+                    <div class="filter-grid">
+                        <button class="filter-btn" data-filter="none">None</button>
+                        <button class="filter-btn" data-filter="grayscale">Grayscale</button>
+                        <button class="filter-btn" data-filter="sepia">Sepia</button>
+                        <button class="filter-btn" data-filter="vintage">Vintage</button>
+                        <button class="filter-btn" data-filter="blur">Blur</button>
+                        <button class="filter-btn" data-filter="sharpen">Sharpen</button>
+                        <button class="filter-btn" data-filter="emboss">Emboss</button>
+                        <button class="filter-btn" data-filter="edge">Edge Detect</button>
+                    </div>
+                </div>
+
+                <!-- Transform -->
+                <div class="tool-section">
+                    <h3><i class="fas fa-sync-alt"></i> Transform</h3>
+                    <div class="transform-controls">
+                        <button id="rotate-left" class="btn btn-small">
+                            <i class="fas fa-undo"></i> Rotate Left
+                        </button>
+                        <button id="rotate-right" class="btn btn-small">
+                            <i class="fas fa-redo"></i> Rotate Right
+                        </button>
+                        <button id="flip-horizontal" class="btn btn-small">
+                            <i class="fas fa-arrows-alt-h"></i> Flip H
+                        </button>
+                        <button id="flip-vertical" class="btn btn-small">
+                            <i class="fas fa-arrows-alt-v"></i> Flip V
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Crop -->
+                <div class="tool-section">
+                    <h3><i class="fas fa-crop"></i> Crop</h3>
+                    <div class="crop-controls">
+                        <button id="crop-btn" class="btn btn-small">Enable Crop</button>
+                        <button id="apply-crop" class="btn btn-small" disabled>Apply Crop</button>
+                        <select id="aspect-ratio">
+                            <option value="free">Free</option>
+                            <option value="1:1">1:1 (Square)</option>
+                            <option value="4:3">4:3</option>
+                            <option value="16:9">16:9</option>
+                            <option value="3:2">3:2</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- History -->
+                <div class="tool-section">
+                    <h3><i class="fas fa-history"></i> History</h3>
+                    <div class="history-controls">
+                        <button id="undo-btn" class="btn btn-small" disabled>
+                            <i class="fas fa-undo"></i> Undo
+                        </button>
+                        <button id="redo-btn" class="btn btn-small" disabled>
+                            <i class="fas fa-redo"></i> Redo
+                        </button>
+                        <button id="reset-btn" class="btn btn-small">
+                            <i class="fas fa-refresh"></i> Reset
+                        </button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Canvas Area -->
+            <main class="canvas-area">
+                <div class="canvas-container">
+                    <div class="no-image" id="no-image">
+                        <i class="fas fa-image"></i>
+                        <h2>No Image Loaded</h2>
+                        <p>Upload an image to start editing</p>
+                    </div>
+                    <canvas id="main-canvas"></canvas>
+                    <div class="crop-overlay" id="crop-overlay" style="display: none;">
+                        <div class="crop-box" id="crop-box">
+                            <div class="crop-handle nw"></div>
+                            <div class="crop-handle ne"></div>
+                            <div class="crop-handle sw"></div>
+                            <div class="crop-handle se"></div>
+                            <div class="crop-handle n"></div>
+                            <div class="crop-handle s"></div>
+                            <div class="crop-handle e"></div>
+                            <div class="crop-handle w"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Canvas Controls -->
+                <div class="canvas-controls">
+                    <div class="zoom-controls">
+                        <button id="zoom-out" class="btn btn-icon">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <span id="zoom-level">100%</span>
+                        <button id="zoom-in" class="btn btn-icon">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button id="fit-to-screen" class="btn btn-icon">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <script src="photo_editor.js"></script>
+</body>
+</html>
